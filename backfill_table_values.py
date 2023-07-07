@@ -13,17 +13,18 @@ if args.table_name:
     print(f"Updating field name: {args.field_name}")
     field_name = args.field_name
 # MySQL connection information
-host = 'HOST'
-user = 'USER'
-password = 'PASS'
-database = 'DB'
-csv_file = "C:\\Users\\krito\\Downloads\\results.csv"
+host = ''
+user = ''
+password = ''
+database = ''
+csv_file = "C:\\Users\\krito\\Desktop\\scripts\\remitModificationDate.csv"
 connection = pymysql.connect(host=host, user=user, password=password, database=database)
 # Open the CSV file and read the ID/value pairs
 with open(csv_file, 'r') as file:
     reader = csv.reader(file)
     # next(reader)  # This would skip the header row
     # Iterate over each row in the CSV file
+    count=0
     for row in reader:
         id_value = row[0]  # Assuming the ID is in the first column
         value = row[1]  # Assuming the value is in the second column
@@ -33,6 +34,8 @@ with open(csv_file, 'r') as file:
             sql = f"UPDATE {table_name} SET {field_name} = %s WHERE id = %s"
             cursor.execute(sql, (value, id_value))
         # Commit the changes
+        count=count+1
         connection.commit()
+print(f"Records updates: {count}")
 # Close the MySQL connection
 connection.close()
