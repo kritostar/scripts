@@ -1,2 +1,4 @@
-compare_db.py
-checklists.csv
+
+remitModificationDate.cvs
+tables.csv
+.env
