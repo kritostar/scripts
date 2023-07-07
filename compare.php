@@ -1,19 +1,18 @@
 <?php
-
 // CSV file path
 $csvFilePath = 'C:\\Users\\krito\\Desktop\\scripts\\tables.csv';
 
 // MySQL database configuration
-$mysqlHost = 'prod-mirror-database-bi.cd5wkjghztcq.us-east-1.rds.amazonaws.com';
-$mysqlUsername = 'cifacchini';
-$mysqlPassword = 'w1^2AMCrqF\~i&,/R/^;';
-$mysqlDatabase = 'sfs_bi_analytics';
+$mysqlHost = '';
+$mysqlUsername = '';
+$mysqlPassword = '';
+$mysqlDatabase = '';
 
 // MSSQL database configuration
-$mssqlServer = 'prod-mirror-database-mssql.cd5wkjghztcq.us-east-1.rds.amazonaws.com';
-$mssqlUsername = 'cifacchini';
-$mssqlPassword = 'w1^2AMCrqF\~i&,/R/^;';
-$mssqlDatabase = 'SFSDB';
+$mssqlServer = '';
+$mssqlUsername = '';
+$mssqlPassword = '';
+$mssqlDatabase = '';
 
 // Load table and field mappings from CSV
 $tableFieldMappings = [];
